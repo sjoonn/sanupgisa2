@@ -65,10 +65,10 @@
 ```jsp
     <%
 	  StringBuffer sb = new StringBuffer();
-	  sb.append("select teacher_code, teacher_name, class_name,");
-	  sb.append(" '￦'||to_char(class_price, '999,999') class_price,");
-	  sb.append(" substr(teach_resist_date,1,4)||'년'||substr(teach_resist_date,5,2)||'월'||substr(teach_resist_date,7,2)||'일' teach_resist_date");
-	  sb.append(" from tbl_teacher_202201");
+	  sb.append("select teacher_code, teacher_name, class_name,"); // 강사 코드, 강사 이름, 강의명 조회
+	  sb.append(" '￦'||to_char(class_price, '999,999') class_price,"); // 쌍 파이프로 글자를 붙여준다. to_char로 콤마 찍어주기.
+	  sb.append(" substr(teach_resist_date,1,4)||'년'||substr(teach_resist_date,5,2)||'월'||substr(teach_resist_date,7,2)||'일' teach_resist_date"); //substr로 년도 월 일 을 끊어주고 쌍파이프로 글자를 붙여준다. 
+	  sb.append(" from tbl_teacher_202201"); 
 	
 	  String sql = sb.toString();
 	
@@ -83,7 +83,7 @@
 
 ```jsp
     <%
-      while(rs.next()) {
+      while(rs.next()) { // rs에 값이 없을 때 까지 반복하면서 테이블 생성.
     %>
       <tr>
         <td><%=rs.getString(1) %></td>
