@@ -8,7 +8,7 @@
   teacher_code char(3) not null,
   teacher_name varchar2(15),
   class_name varchar2(20),
-  class_price varchar2(8),
+  class_price number(8),
   teach_resist_date varchar2(8),
   primary key(teacher_code));
 
